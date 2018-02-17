@@ -24,12 +24,19 @@ func setModal(c car,name string) car{
 }
 
 
+func NewCar(year uint16, modal string, top_speed_kmh float64) car{
+	return car{year:year, modal:modal, top_speed_kmh:top_speed_kmh}
+}
+
+
 func main(){
 	a_car := car{year: 2018,modal: "Mehraan",top_speed_kmh: 225.0}
 	fmt.Println(a_car.render("shakir"))
 	a_car.setModal("city")
 	fmt.Println(a_car.render("shakir"))
 	a_car = setModal(a_car, "Corolla"	)
+	fmt.Println(a_car.render("shakir"))
+	a_car = NewCar(2014, "city", 225.0)
 	fmt.Println(a_car.render("shakir"))
 	
 }

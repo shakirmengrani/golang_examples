@@ -4,12 +4,12 @@ import (
 	"bytes"
 	"crypto/sha256"
 	"fmt"
-	"math"
+	//"math"
 	"math/big"
 )
 
 var (
-	maxNonce = math.MaxInt64
+	maxNonce = 32 // math.MaxInt64
 )
 
 const targetBits = 24
@@ -44,7 +44,7 @@ func (pow *ProofOfWork) Run() (int, []byte) {
 		hash = sha256.Sum256(data)
 		fmt.Printf("\r%x", hash)
 		hashInt.SetBytes(hash[:])
-
+		fmt.Printf("\t%d | %d", maxNonce, nonce)
 		if hashInt.Cmp(pow.target) == -1 {
 			break
 		} else {

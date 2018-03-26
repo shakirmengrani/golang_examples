@@ -8,19 +8,33 @@ import (
 	"github.com/boltdb/bolt"
 )
 
+var (
+	dbFile     = "db.db"
+	bucketname = []byte("mybucket")
+)
+
 func hello(say func() error) error {
 	return say()
 }
 
 func main() {
-	db, err := bolt.Open("db.db", 0600, nil)
+	db, err := bolt.Open(dbFile, 0600, nil)
 	defer db.Close()
 	if err != nil {
 		log.Fatal(err)
 	}
 
+	// err = db.Batch(func(tx *bolt.Tx) error {
+	// 	b, err := tx.CreateBucketIfNotExists(bucketname)
+	// 	if err != nil {
+	// 		return fmt.Errorf("Create bucket %s", err)
+	// 	}
+
+	// 	return nil
+	// })
+
 	err = db.Update(func(tx *bolt.Tx) error {
-		b, err := tx.CreateBucketIfNotExists([]byte("mybucket"))
+		b, err := tx.CreateBucketIfNotExists([]byte(bucketname))
 		if err != nil {
 			return fmt.Errorf("Create bucket %s", err)
 		}
@@ -36,7 +50,7 @@ func main() {
 	}
 
 	err = db.View(func(tx *bolt.Tx) error {
-		b := tx.Bucket([]byte("mybucket"))
+		b := tx.Bucket([]byte(bucketname))
 		c := b.Cursor()
 		if b == nil {
 			return errors.New("Bucket not found")

@@ -4,12 +4,12 @@ import (
 	"bytes"
 	"crypto/sha256"
 	"fmt"
-	//"math"
+	"math"
 	"math/big"
 )
 
 var (
-	maxNonce = 32 // math.MaxInt64
+	maxNonce = math.MaxInt64
 )
 
 const targetBits = 24
@@ -73,4 +73,3 @@ func NewProofOfWork(b *Block) *ProofOfWork {
 	pow := &ProofOfWork{b, target}
 	return pow
 }
-

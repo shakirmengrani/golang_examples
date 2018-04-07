@@ -15,7 +15,7 @@ func main() {
 	m.SetBody("text/html", "Hello <b>Bob</b> and <i>Cora</i>!")
 	// m.Attach("/home/Alex/lolcat.jpg")
 
-	d := gomail.NewDialer("smtp.gmail.com", 465, "shakir.mengrani@gmail.com", "@@##ShakirMengrani@786@@##1200##")
+	d := gomail.NewDialer("<hostname>", "<port>", "<username>", "<password>")
 	d.TLSConfig = &tls.Config{InsecureSkipVerify: true}
 	// Send the email to Bob, Cora and Dan.
 	if err := d.DialAndSend(m); err != nil {

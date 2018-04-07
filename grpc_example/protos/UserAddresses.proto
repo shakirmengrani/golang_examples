@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package UserAddresses;
+
+service UserAddresses {
+
+    rpc List (UserRequest) returns (UserResponse);
+}
+
+message UserRequest {
+    int32 id = 1;
+}
+
+message UserResponse {
+    string name = 1;
+    string email = 2;
+    message Address {
+        string location = 1;
+    }
+    repeated Address addresses = 3;
+}

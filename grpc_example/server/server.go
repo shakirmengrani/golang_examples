@@ -1,17 +1,17 @@
-package server
+package main
 
 import (
 	"context"
 	"log"
 	"net"
 
-	pb "./helloworld"
+	pb "../helloworld"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"
 )
 
 const (
-	port = ":5009"
+	port = ":9090"
 )
 
 type server struct{}

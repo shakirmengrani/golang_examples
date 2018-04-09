@@ -1,11 +1,11 @@
-package client
+package main
 
 import (
 	"context"
 	"log"
 	"time"
 
-	pb "./helloworld"
+	pb "../helloworld"
 	"google.golang.org/grpc"
 )
 

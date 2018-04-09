@@ -19,7 +19,7 @@ This database system is a native database which is contains buckets. In buckets 
 This was written in ruby but now developers wrote in golang with using channel and goruotines feature.
 
 ### gRPC
-I tried to make a simple microservice over gRPC. for getting further information please visit grpc_example folder. 
+I tried to make a simple microservice over gRPC. for getting further information please visit [grpc_example folder](https://github.com/shakirmengrani/golang_examples/tree/master/grpc_example). 
 
 ### Container
 As we know that docker, kubernetes and CoreOS is written in golang, I should tried to make something like this for making better infrasturcture for my own microservices.

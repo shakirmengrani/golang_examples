@@ -3,7 +3,7 @@
 1. By Sentex
 2. By Google IO
 3. packtpub
-4. coffeShop folked from sameer ajmaani
+4. coffeeShop copied from sameer ajmaani
 
 ### What is golang?
 https://www.facebook.com/permalink.php?story_fbid=564279770620454&id=563332587381839

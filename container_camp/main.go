@@ -35,10 +35,10 @@ func child() {
 	cmd.Stdin = os.Stdin
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
-	must(syscall.Chroot("/home/rootfs"))
-	must(syscall.Chdir("/"))
-	must(syscall.Mount("proc", "proc", "proc", 0, ""))
-	must(cmd.Run())
+	// must(syscall.Chroot("/home/rootfs"))
+	// must(syscall.Chdir("/"))
+	// must(syscall.Mount("proc", "proc", "proc", 0, ""))
+	// must(cmd.Run())
 }
 
 func must(err error) {

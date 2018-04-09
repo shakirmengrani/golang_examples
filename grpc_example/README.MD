@@ -19,14 +19,9 @@ for more https://grpc.io/docs/guides/concepts.html
 6. make GOPATH bin folder globally executable.
 7. write a .proto file
 8. `protoc -I. --go_out=plugins=grpc:. path/to/your_service.proto` for generating a stub file.
-9. `protoc -I. -I$GOPATH/src/github.com/grpc-ecosystem/grpc-gateway/third_party/googleapis \
-  --grpc-gateway_out=logtostderr=true:. \
-  path/to/your_service.proto`
+9. `protoc -I. -I$GOPATH/src/github.com/grpc-ecosystem/grpc-gateway/third_party/googleapis --grpc-gateway_out=logtostderr=true:. path/to/your_service.proto`
   It will generate a reverse proxy .pb.gw.go file
-10. `protoc -I. \
-  -I$GOPATH/src/github.com/grpc-ecosystem/grpc-gateway/third_party/googleapis \
-  --swagger_out=logtostderr=true:. \
-  path/to/your_service.proto`
+10. `protoc -I. -I$GOPATH/src/github.com/grpc-ecosystem/grpc-gateway/third_party/googleapis --swagger_out=logtostderr=true:. path/to/your_service.proto`
 It will generate a swagger file which is contains given proto file descriptions.
 11. checkout https://github.com/shakirmengrani/golang_examples/tree/master/grpc_example .
 

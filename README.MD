@@ -5,11 +5,12 @@
 3. packtpub
 4. coffeShop folked from sameer ajmaani
 
-Some examples blockchain and nats.io
-
 ### What is golang?
 https://www.facebook.com/permalink.php?story_fbid=564279770620454&id=563332587381839
 
+
+### Blockchain
+Now a days blockchain is pretty hot term. when we heared just we think about golang so i decide to code a blockchain on golang. It's really good idea and works faster than other languages.
 
 ### BoltDB
 This database system is a native database which is contains buckets. In buckets we store our informations.
